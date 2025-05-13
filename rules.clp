@@ -123,7 +123,7 @@
 (defrule regalar-vale-por-compra
   ?orden <- (orden (cliente ?c) (tipo compu) (marca ?m) (modelo ?mo) (cantidad ?cant) (pago ?p))
   (cliente (name ?c) (tipo mayorista))
-  (not (vale (cliente ?c))) ;; solo si no tiene vale todavía
+  (not (vale (cliente ?c))) 
   =>
   (assert (vale (cliente ?c) (monto 50)))
   (printout t "Gracias por tu compra recibe un vale de $50 a " ?c "." crlf)
